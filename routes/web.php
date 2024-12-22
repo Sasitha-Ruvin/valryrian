@@ -6,6 +6,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('test', function(){
+    $category = App\Models\Category::find(3);
+    return $category->products;
+
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
